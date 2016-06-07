@@ -1,0 +1,28 @@
+init:
+  - git config --global core.autocrlf true
+
+install:
+  - choco install pretzel -y
+  - choco install pretzel.scriptcs -y
+
+cache:
+  - C:\tools\pretzel -> appveyor.yml
+
+build_script:
+  - ps: .\build.ps1
+
+test_script:
+  - ps: .\RunTests.ps1
+
+artifacts:
+  - path: artifacts\MarkdigEngine.zip
+    name: MarkdigEngine.zip
+
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: Prb/lsKP5VK0hN58Bw2RiU8uyi1kpNEleEOjybPQQQlSH3tXR7ru6s8J4I7hx/Um
+    artifact: MarkdigEngine.zip
+    description: "## First release\r\n\r\nProvide a plugin which use [Markdig](https://github.com/lunet-io/markdig) with Extra mode instead of the default markdown engine of [Pretzel](http://github.com/code52/pretzel)."
+    on:
+      appveyor_repo_tag: true
