@@ -7,4 +7,6 @@ Provide a plugin which use [Markdig](https://github.com/lunet-io/markdig) with a
 The Markdig usage can be modified directly in the `MarkdigEngine.csx` file.
 
 ## Usage
-Simply unzip the files from the last [release](https://github.com/laedit/Pretzel.Markdig/releases) in the `_plugins` directory of your Pretzel site.
+Since the plugin use [ScriptCs](http://scriptcs.net/) you have to install [Pretzel.ScriptCs](https://chocolatey.org/packages/pretzel.scriptcs).
+
+After that, simply unzip the files from the last [release](https://github.com/laedit/Pretzel.Markdig/releases) in the `_plugins` directory of your Pretzel site.
