@@ -1,5 +1,11 @@
 $ErrorActionPreference = "Stop"
 
+trap {
+    "$_"
+    Throw $_.Exception
+    continue
+}
+
 $currentPath = (Get-Item -Path ".\" -Verbose).FullName
 $testsiteFolder = "$currentPath\testsite"
 $pluginsFolder = "$testsiteFolder\_plugins"
