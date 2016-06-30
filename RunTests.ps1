@@ -1,9 +1,14 @@
 $ErrorActionPreference = "Stop"
 
 trap {
+    echo "Exception"
     echo $_.Exception
+    echo "Exception detail"
     echo $_.Exception|format-list -force
+    echo "Exception.ErrorRecord detail"
     echo $_.Exception.ErrorRecord|format-list -force
+    echo "Exception.ErrorRecord.Exception detail"
+    echo $_.Exception.ErrorRecord.Exception|format-list -force
     Throw $_.Exception
     continue
 }
