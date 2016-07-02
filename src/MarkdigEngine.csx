@@ -9,7 +9,7 @@ public sealed class MarkdigEngine : ILightweightMarkupEngine
 
     public MarkdigEngine()
     {
-        _pipeline = new MarkdownPipelineBuilder().UseAllExtensions().UseEmojiAndSmiley().Build();
+        _pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().UseEmojiAndSmiley().Build();
     }
 
     public string Convert(string markdownContent)

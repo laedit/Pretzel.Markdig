@@ -18,9 +18,10 @@ $testsiteFolder = "$currentPath\testsite"
 $pluginsFolder = "$testsiteFolder\_plugins"
 $postsFolder = "$testsiteFolder\_posts"
 $testGeneratedFile = "$testsiteFolder\_site\2015\11\06\MarkdigTest.html"
+$pretzelPath = "C:\tools\Pretzel\pretzel"
 
 If (-Not (Test-Path $testsiteFolder)){
-    & "C:\tools\Pretzel\pretzel" create testsite
+    & $pretzelPath create testsite
 
     if ($LASTEXITCODE -ne 0) 
     {
@@ -66,7 +67,7 @@ Start-Sleep -milliseconds 100
 Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory("$currentPath/artifacts/MarkdigEngine.zip", $pluginsFolder)
 
-& "C:\tools\Pretzel\pretzel" bake testsite --debug
+& $pretzelPath bake testsite --debug
 
 if ($LASTEXITCODE -ne 0) 
 {
@@ -93,7 +94,7 @@ function AssertFileContains
 }
 
 # table test
-AssertFileContains $testGeneratedFile "<table class=""table"">"
+AssertFileContains $testGeneratedFile "<table>"
 
 # smiley test
 AssertFileContains $testGeneratedFile "😃"
