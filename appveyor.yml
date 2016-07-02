@@ -23,6 +23,6 @@ deploy:
     auth_token:
       secure: Prb/lsKP5VK0hN58Bw2RiU8uyi1kpNEleEOjybPQQQlSH3tXR7ru6s8J4I7hx/Um
     artifact: MarkdigEngine.zip
-    description: "## First release\r\n\r\nProvide a plugin which use [Markdig](https://github.com/lunet-io/markdig) with Extra mode instead of the default markdown engine of [Pretzel](http://github.com/code52/pretzel)."
+    description: "## Second release\r\n\r\n[Updated for Markdig 0.7](https://github.com/laedit/Pretzel.Markdig/pull/1) thanks to [thoemmi](https://github.com/thoemmi)."
     on:
       appveyor_repo_tag: true
