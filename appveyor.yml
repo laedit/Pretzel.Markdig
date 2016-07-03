@@ -6,10 +6,10 @@ install:
   - choco install pretzel.scriptcs -y
 
 build_script:
-  - fsi BuildAndTests.fsx build
+  - "\"C:\\Program Files (x86)\\Microsoft SDKs\\F#\\4.0\\Framework\\v4.0\\fsi\" BuildAndTests.fsx build"
 
 test_script:
-  - fsi BuildAndTests.fsx tests
+  - "\"C:\\Program Files (x86)\\Microsoft SDKs\\F#\\4.0\\Framework\\v4.0\\fsi\" BuildAndTests.fsx tests"
 
 artifacts:
   - path: artifacts\MarkdigEngine.zip
