@@ -5,14 +5,11 @@ install:
   - choco install pretzel -y
   - choco install pretzel.scriptcs -y
 
-cache:
-  - C:\tools\pretzel -> appveyor.yml
-
 build_script:
-  - ps: .\build.ps1
+  - fsi BuildAndTests.fsx build
 
 test_script:
-  - ps: .\RunTests.ps1
+  - fsi BuildAndTests.fsx tests
 
 artifacts:
   - path: artifacts\MarkdigEngine.zip
