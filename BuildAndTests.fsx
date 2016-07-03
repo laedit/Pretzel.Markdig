@@ -83,7 +83,7 @@ let AssertFileContains (fileData:string) wordToFind =
 let Tests =
     printfn "%s" "Start tests"
     if not(Directory.Exists testsitePath) then
-        StartProcess "Pretzel" "create testsite"
+        StartProcess "C:/tools/Pretzel/Pretzel" "create testsite"
         File.AppendAllText(Path.Combine(postsPath, "2015-11-06-MarkdigTest.md"), """
 ---
 layout: post
@@ -115,7 +115,7 @@ css class test {.beautiful}
 
     CleanDir pluginsPath
     ZipFile.ExtractToDirectory(markdigEngineZipPath, pluginsPath)
-    StartProcess "Pretzel" "bake testsite --debug"
+    StartProcess "C:/tools/Pretzel/Pretzel" "bake testsite --debug"
     let fileData = File.ReadAllText testGeneratedFilePath
 
     // table test
