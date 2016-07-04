@@ -10,7 +10,7 @@ open System.Net
 let tempPath = Path.Combine(__SOURCE_DIRECTORY__, "temp")
 let artifactsPath = Path.Combine(__SOURCE_DIRECTORY__, "artifacts")
 let srcPath = Path.Combine(__SOURCE_DIRECTORY__, "src")
-let markdigEngineZipPath = Path.Combine(artifactsPath, "MardigEngine.zip")
+let markdigEngineZipPath = Path.Combine(artifactsPath, "MarkdigEngine.zip")
 let testsitePath = Path.Combine(__SOURCE_DIRECTORY__, "testsite")
 let pluginsPath = Path.Combine(testsitePath,"_plugins")
 let postsPath = Path.Combine(testsitePath,"_posts")
